@@ -82,8 +82,12 @@ class webServerHandler(BaseHTTPRequestHandler):
             if self.path.endswith("/edit"):
                 ctype, pdict = cgi.parse_header(
                     self.headers.getheader('content-type'))
-                if ctype == 'mulitpart/form-data':
+
+                print ctype
+
+                if ctype == 'multipart/form-data':
                     fields = cgi.parse_multipart(self.rfile, pdict)
+
                     messagecontent = fields.get('newRestaurantName')
                     restaurantIDPath = self.path.split("/")[2]
 

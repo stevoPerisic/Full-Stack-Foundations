@@ -47,4 +47,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+# Stevo Additions
+# ignore the .db files, .pyc files
+*.db
+*.pyc
+
 
